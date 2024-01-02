@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "../components/landingpage/Header";
+import { NextAuthProvider } from "@/components/AuthProvider/AuthProvider";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "NFC Smart Card",
-  description: "NFC smart card",
+  title: "Smart Profile",
+  description: "Smart Profile",
 };
 
 export default function RootLayout({
@@ -17,7 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <NextAuthProvider>
+        <body className={inter.className}>{children}</body>
+        <Toaster />
+      </NextAuthProvider>
     </html>
   );
 }
