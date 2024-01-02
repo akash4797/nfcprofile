@@ -4,7 +4,10 @@ import sanityClient from "./sanity";
 const builder = imageUrlBuilder(sanityClient);
 
 const urlFor = (source: any) => {
-  return builder.image(source);
+  if (!source) {
+    return "path/to/default/image.jpg";
+  }
+  return builder.image(source).url();
 };
 
 export default urlFor;

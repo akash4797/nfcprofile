@@ -55,8 +55,16 @@ export default function Header() {
             <DropdownMenu>
               <DropdownMenuTrigger>
                 <Avatar>
-                  <AvatarImage src={urlFor(session?.user?.image).url()} />
-                  <AvatarFallback>CN</AvatarFallback>
+                  {session?.user?.image ? (
+                    <AvatarImage
+                      src={urlFor(session?.user?.image)}
+                      alt={session?.user?.name as string}
+                    />
+                  ) : (
+                    <AvatarFallback>
+                      {session?.user?.name?.charAt(0)}
+                    </AvatarFallback>
+                  )}
                 </Avatar>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
