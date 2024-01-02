@@ -18,8 +18,6 @@ export default function Header() {
   const { data: session, status } = useSession();
   const pathname = usePathname();
 
-  console.log(pathname);
-
   const loginHandler = async () => {
     try {
       await signIn();

@@ -31,6 +31,7 @@ export default function Auth() {
         const user = await signUp(data);
         if (user) {
           toast("User Created!");
+          signUpFormik.resetForm();
         }
       } catch (error) {
         toast("Something went wrong!");
