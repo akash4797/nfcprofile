@@ -38,37 +38,34 @@ export default function Signin() {
   if (status === "loading") return <Loading />;
 
   return (
-    <div className="flex flex-col justify-center">
-      <Header />
-      <div className="container py-5">
-        <div className="">
-          <h1 className="text-xl font-bold">SIGN IN</h1>
-        </div>
-        <form
-          onSubmit={signinFormik.handleSubmit}
-          className="flex flex-col gap-3 mt-3 bg-slate-100 rounded-lg p-5 shadow-md"
-        >
-          <Input
-            type="email"
-            placeholder="Email"
-            name="email"
-            id="email"
-            value={signinFormik.values.email}
-            onChange={signinFormik.handleChange}
-          />
-          <Input
-            type="password"
-            placeholder="Password"
-            name="password"
-            id="password"
-            value={signinFormik.values.password}
-            onChange={signinFormik.handleChange}
-          />
-          <Button type="submit" className="w-fit">
-            LOG IN
-          </Button>
-        </form>
+    <div className="container">
+      <div className="">
+        <h1 className="text-xl font-bold">SIGN IN</h1>
       </div>
+      <form
+        onSubmit={signinFormik.handleSubmit}
+        className="flex flex-col gap-3 mt-3 bg-slate-100 rounded-lg p-5 shadow-md"
+      >
+        <Input
+          type="email"
+          placeholder="Email"
+          name="email"
+          id="email"
+          value={signinFormik.values.email}
+          onChange={signinFormik.handleChange}
+        />
+        <Input
+          type="password"
+          placeholder="Password"
+          name="password"
+          id="password"
+          value={signinFormik.values.password}
+          onChange={signinFormik.handleChange}
+        />
+        <Button type="submit" className="w-fit">
+          LOG IN
+        </Button>
+      </form>
     </div>
   );
 }

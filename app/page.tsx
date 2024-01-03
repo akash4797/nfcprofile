@@ -6,10 +6,5 @@ import Loading from "@/components/Loading/Loading";
 export default function Home() {
   const { status } = useSession();
   if (status === "loading") return <Loading />;
-  return (
-    <div className="flex flex-col justify-center">
-      <Header />
-      <div className="container py-5">Home Page</div>
-    </div>
-  );
+  return <div className="container">Home Page</div>;
 }

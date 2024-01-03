@@ -46,45 +46,42 @@ export default function Auth() {
   if (status === "loading") return <Loading />;
 
   return (
-    <div className="flex flex-col justify-center">
-      <Header />
-      <div className="container py-5">
-        <div className="">
-          <h1 className="text-xl font-bold">SIGN UP</h1>
-        </div>
-        <form
-          onSubmit={signUpFormik.handleSubmit}
-          className="flex flex-col gap-3 mt-3 bg-slate-100 rounded-lg p-5"
-        >
-          <Input
-            type="text"
-            placeholder="Name"
-            name="name"
-            id="name"
-            value={signUpFormik.values.name}
-            onChange={signUpFormik.handleChange}
-          />
-          <Input
-            type="email"
-            placeholder="Email"
-            name="email"
-            id="email"
-            value={signUpFormik.values.email}
-            onChange={signUpFormik.handleChange}
-          />
-          <Input
-            type="password"
-            placeholder="Password"
-            name="password"
-            id="password"
-            value={signUpFormik.values.password}
-            onChange={signUpFormik.handleChange}
-          />
-          <Button type="submit" className="w-fit">
-            Create Account
-          </Button>
-        </form>
+    <div className="container">
+      <div className="">
+        <h1 className="text-xl font-bold">SIGN UP</h1>
       </div>
+      <form
+        onSubmit={signUpFormik.handleSubmit}
+        className="flex flex-col gap-3 mt-3 bg-slate-100 rounded-lg p-5"
+      >
+        <Input
+          type="text"
+          placeholder="Name"
+          name="name"
+          id="name"
+          value={signUpFormik.values.name}
+          onChange={signUpFormik.handleChange}
+        />
+        <Input
+          type="email"
+          placeholder="Email"
+          name="email"
+          id="email"
+          value={signUpFormik.values.email}
+          onChange={signUpFormik.handleChange}
+        />
+        <Input
+          type="password"
+          placeholder="Password"
+          name="password"
+          id="password"
+          value={signUpFormik.values.password}
+          onChange={signUpFormik.handleChange}
+        />
+        <Button type="submit" className="w-fit">
+          Create Account
+        </Button>
+      </form>
     </div>
   );
 }

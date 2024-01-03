@@ -30,21 +30,32 @@ export default function Header() {
     <div className="flex flex-col justify-center">
       <header className="w-full bg-gray-200 shadow-sm">
         <div className="w-full flex justify-between py-5 container items-center">
-          <Link href={"/"}>
+          <Link href={"/"} className="flex justify-center items-center gap-2">
             <Image
               src={"/logo.png"}
               height={527}
               width={640.95}
               alt="logo"
-              className=" w-12"
+              className=" w-10"
             />
+            <span className="text-base">Smart Profile</span>
           </Link>
           <ul className="flex gap-5 uppercase text-sm">
             <Link href={"/"}>
-              <li className={`${pathname === "/" ? "font-bold" : ""}`}>Home</li>
+              <li
+                className={`${
+                  pathname === "/" ? "font-bold bg-white" : ""
+                } p-2 rounded`}
+              >
+                Home
+              </li>
             </Link>
             <Link href={"/aboutus"}>
-              <li className={`${pathname === "/aboutus" ? "font-bold" : ""}`}>
+              <li
+                className={`${
+                  pathname === "/aboutus" ? "font-bold bg-white" : ""
+                } rounded p-2`}
+              >
                 About
               </li>
             </Link>
