@@ -13,6 +13,7 @@ import urlFor from "@/lib/imageBuilder";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { MdOutlineDarkMode } from "react-icons/md";
 
 export default function Header() {
   const { data: session, status } = useSession();
@@ -40,7 +41,10 @@ export default function Header() {
             />
             <span className="text-base">Smart Profile</span>
           </Link>
-          <ul className="flex gap-5 uppercase text-sm">
+          <ul className="flex gap-5 uppercase text-sm justify-center items-center">
+            <li>
+              <MdOutlineDarkMode size={20} />
+            </li>
             <Link href={"/"}>
               <li
                 className={`${
@@ -59,40 +63,42 @@ export default function Header() {
                 About
               </li>
             </Link>
-          </ul>
-          {status === "authenticated" ? (
-            <DropdownMenu>
-              <DropdownMenuTrigger>
-                <Avatar>
-                  {session?.user?.image ? (
-                    <AvatarImage
-                      src={urlFor(session?.user?.image)}
-                      alt={session?.user?.name as string}
-                    />
-                  ) : (
-                    <AvatarFallback>
-                      {session?.user?.name?.charAt(0)}
-                    </AvatarFallback>
-                  )}
-                </Avatar>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem>My Profile</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => signOut()}>
-                  Logout
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          ) : (
-            <div className="flex gap-3">
-              <Button variant={"outline"} onClick={loginHandler}>
-                Login
-              </Button>
-              <Link href={"/auth/signup"}>
+            <li>
+              {status === "authenticated" ? (
+                <DropdownMenu>
+                  <DropdownMenuTrigger>
+                    <Avatar>
+                      {session?.user?.image ? (
+                        <AvatarImage
+                          src={urlFor(session?.user?.image)}
+                          alt={session?.user?.name as string}
+                        />
+                      ) : (
+                        <AvatarFallback>
+                          {session?.user?.name?.charAt(0)}
+                        </AvatarFallback>
+                      )}
+                    </Avatar>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    <DropdownMenuItem>My Profile</DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => signOut()}>
+                      Logout
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <div className="flex gap-3">
+                  <Button variant={"default"} onClick={loginHandler}>
+                    Login
+                  </Button>
+                  {/* <Link href={"/auth/signup"}>
                 <Button variant={"default"}>Create Account</Button>
-              </Link>
-            </div>
-          )}
+              </Link> */}
+                </div>
+              )}
+            </li>
+          </ul>
         </div>
       </header>
     </div>
