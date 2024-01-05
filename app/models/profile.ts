@@ -1,3 +1,11 @@
+export type image = {
+  _type: string;
+  asset: {
+    _ref: string;
+    _type: string;
+  };
+};
+
 export type userProfile = {
   _id: string;
   displayname: string;
@@ -7,8 +15,13 @@ export type userProfile = {
   instagram: string;
   linkedin: string;
   website: string;
+  company: {
+    name: string;
+    position: string;
+  };
+  backgroundimage: image;
   user: {
-    _ref: string;
-    _type: string;
+    _id: string;
+    image: image;
   };
 };

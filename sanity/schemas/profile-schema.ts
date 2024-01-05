@@ -17,6 +17,36 @@ const profile = {
       to: { type: "user" },
     }),
     defineField({
+      name: "backgroundimage",
+      title: "Background Image",
+      type: "image",
+      options: { hotspot: true },
+      fields: [
+        {
+          name: "alt",
+          title: "Alt",
+          type: "string",
+        },
+      ],
+    }),
+    defineField({
+      name: "company",
+      title: "Company",
+      type: "document",
+      fields: [
+        {
+          name: "name",
+          title: "Name",
+          type: "string",
+        },
+        {
+          name: "position",
+          title: "Postion",
+          type: "string",
+        },
+      ],
+    }),
+    defineField({
       name: "contact",
       title: "Contact",
       type: "string",
