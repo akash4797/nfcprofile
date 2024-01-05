@@ -7,7 +7,7 @@ export default function About() {
   const { status } = useSession();
   if (status === "loading") return <Loading />;
   return (
-    <div className="container">
+    <div className="container py-5">
       <div className="">
         <h1 className="text-2xl font-bold text-center uppercase">About us</h1>
       </div>
