@@ -1,5 +1,4 @@
 "use client";
-import Header from "@/components/landingpage/Header";
 import { useSession } from "next-auth/react";
 import Loading from "@/components/Loading/Loading";
 
