@@ -24,7 +24,7 @@ export default function UserPanelForm({
           className="w-56 h-56 object-cover rounded-lg"
         />
       </div>
-      <form className="flex flex-col gap-5">
+      {/* <form className="flex flex-col gap-5">
         <div className="flex flex-col gap-2 p-5 bg-slate-200 rounded-lg">
           <Label>Your Display Name:</Label>
           <Input value={userprofile.displayname} placeholder="Display Name" />
@@ -41,7 +41,7 @@ export default function UserPanelForm({
           <Label>Your Facebook URL:</Label>
           <Input value={userprofile.facebook} placeholder="Facebook URL" />
         </div>
-      </form>
+      </form> */}
     </>
   );
 }
