@@ -32,29 +32,79 @@ const profile = {
     defineField({
       name: "company",
       title: "Company",
-      type: "document",
-      fields: [
+      type: "array",
+      of: [
         {
-          name: "name",
-          title: "Name",
-          type: "string",
-        },
-        {
-          name: "position",
-          title: "Postion",
-          type: "string",
+          name: "companyinfo",
+          title: "Company Info",
+          type: "document",
+          fields: [
+            {
+              name: "name",
+              title: "Name",
+              type: "string",
+            },
+            {
+              name: "position",
+              title: "Postion",
+              type: "string",
+            },
+            {
+              name: "link",
+              title: "Link",
+              type: "string",
+            },
+          ],
         },
       ],
     }),
     defineField({
-      name: "contact",
-      title: "Contact",
-      type: "string",
+      name: "contacts",
+      title: "Contacts",
+      type: "array",
+      of: [
+        {
+          name: "contact",
+          title: "Contact",
+          type: "document",
+          fields: [
+            {
+              name: "place",
+              title: "Place",
+              type: "string",
+            },
+            {
+              name: "contactnumber",
+              title: "Contact Number",
+              type: "string",
+            },
+          ],
+        },
+      ],
     }),
     defineField({
-      name: "displayemail",
-      title: "Display Email",
-      type: "string",
+      name: "displayemails",
+      title: "Display Emails",
+      type: "array",
+      of: [
+        {
+          name: "displayemail",
+          title: "Display Email",
+          type: "document",
+          fields: [
+            {
+              name: "place",
+              title: "Place",
+              type: "string",
+            },
+            {
+              name: "emailaddress",
+              title: "Email Address",
+              type: "string",
+            },
+          ],
+        },
+      ],
     }),
     defineField({
       name: "facebook",
@@ -82,9 +132,16 @@ const profile = {
       type: "string",
     }),
     defineField({
-      name: "website",
-      title: "Website",
-      type: "string",
+      name: "websites",
+      title: "Websites",
+      type: "array",
+      of: [
+        {
+          name: "websiteurl",
+          title: "Website Url",
+          type: "string",
+        },
+      ],
     }),
   ],
 };

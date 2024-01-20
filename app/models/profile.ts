@@ -9,16 +9,32 @@ export type image = {
 export type userProfile = {
   _id: string;
   displayname: string;
-  displayemail: string;
-  contact: string;
+  displayemails: [
+    {
+      _key: string;
+      place: string;
+      emailaddress: string;
+    }
+  ];
+  contacts: [
+    {
+      _key: string;
+      place: string;
+      contactnumber: string;
+    }
+  ];
   facebook: string;
   instagram: string;
   linkedin: string;
-  website: string;
-  company: {
-    name: string;
-    position: string;
-  };
+  websites: [string];
+  company: [
+    {
+      _key: string;
+      link: string;
+      name: string;
+      position: string;
+    }
+  ];
   backgroundimage: image;
   user: {
     _id: string;

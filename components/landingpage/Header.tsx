@@ -14,6 +14,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { MdOutlineDarkMode } from "react-icons/md";
+import Loading from "../Loading/Loading";
 
 export default function Header() {
   const { data: session, status } = useSession();
@@ -26,6 +27,8 @@ export default function Header() {
       console.log(error);
     }
   };
+
+  if (status === "loading") return <Loading />;
 
   return (
     <div className="flex flex-col justify-center">
@@ -81,7 +84,9 @@ export default function Header() {
                     </Avatar>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
-                    <DropdownMenuItem>My Profile</DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <Link href={"/userpanel"}>My Profile</Link>
+                    </DropdownMenuItem>
                     <DropdownMenuItem onClick={() => signOut()}>
                       Logout
                     </DropdownMenuItem>

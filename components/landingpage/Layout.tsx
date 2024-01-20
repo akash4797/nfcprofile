@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 export default function Layout({ children }: { children: React.ReactNode }) {
   const pathName = usePathname();
 
-  if (pathName === "/studio" || pathName.startsWith("/profile"))
+  if (pathName.startsWith("/studio") || pathName.startsWith("/profile"))
     return <>{children}</>;
 
   return (

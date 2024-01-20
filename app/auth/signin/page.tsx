@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect } from "react";
-import Header from "@/components/landingpage/Header";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useFormik } from "formik";
@@ -19,14 +18,16 @@ export default function Signin() {
     },
     onSubmit: async (values) => {
       const result = await signIn("sanity-login", {
-        redirect: false,
+        redirect: true,
         email: values.email as string,
         password: values.password as string,
+        callbackUrl: "/userpanel",
       });
+      console.log(result);
       if (result?.error) {
         toast(result?.error);
       } else {
-        router.push("/");
+        router.push("/userpanel");
       }
     },
   });
