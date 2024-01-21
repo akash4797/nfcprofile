@@ -6395,6 +6395,11 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
+vcard-creator@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/vcard-creator/-/vcard-creator-0.6.0.tgz#bfbc9c2b39509c16f087a3de25e013e1eaa9d556"
+  integrity sha512-X++vIvcdydbsf+5eLMzS/xRmDQ+cQmceqSJCTBdMNQUzZfYjiiksyuwraWxqJ4N94ZzQoCbqhZ20XN9wXYJ3jg==
+
 vite@^4.5.0:
   version "4.5.1"
   resolved "https://registry.yarnpkg.com/vite/-/vite-4.5.1.tgz#3370986e1ed5dbabbf35a6c2e1fb1e18555b968a"
